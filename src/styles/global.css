@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: white;
+  text-decoration: underline;
+}
+
+.page {
+  background-color: #0f172a;
+  font-family: "Fira Sans", sans-serif;
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 1rem 0;
+  width: calc(100% - 200px);
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__heading {
+  color: white;
+}
+
+.header__nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.header__nav-item {
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.intro,
+.list {
+  color: #ebbe54;
+}
+
+.header,
+.intro,
+.list {
+  margin-top: 1rem;
+}
+
+.list :is(h3, a, details) {
+  margin-top: 0.5rem;
+}
+
+.list__difficulty {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.list__questions {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.list__question + .list__question {
+  margin-top: 1rem;
+}
+
+.list__question {
+  align-items: flex-start;
+  border: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.5;
+  padding: 0.5rem;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.list__question:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.list__meta {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.list__link {
+  display: block;
+}
+
+.list__details {
+  cursor: pointer;
+}

@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "isolatedModules": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "target": "ESNext"
+  }
+}
