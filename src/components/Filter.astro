@@ -1,0 +1,37 @@
+---
+const { topics } = Astro.props;
+---
+
+<style>
+  .topics__label {
+    color: #ebbe54;
+  }
+</style>
+
+<script>
+  const topicsSelect = document.getElementById("topics");
+  const questionsContainer = document.querySelector(".list__questions");
+  const questions = Array.from(document.querySelectorAll(".list__question"));
+
+  const filteredQuestionsFragment = new DocumentFragment();
+
+  topicsSelect.addEventListener("input", (e) => {
+    const topic = (e.target as HTMLSelectElement).value;
+    const filteredQuestions = questions.filter((question) => {
+      const questionTopics = Array.from(
+        question.querySelector(".list__details").querySelectorAll("p")
+      ).map((topic) => topic.textContent);
+      return questionTopics.includes(topic);
+    });
+    filteredQuestionsFragment.append(...filteredQuestions);
+    questionsContainer.innerHTML = "";
+    questionsContainer.append(filteredQuestionsFragment);
+  });
+</script>
+
+<label class="topics__label" for="topics">Choose a topic:</label>
+
+<select class="topics" name="topics" id="topics">
+  <option value="">--Please choose a topic--</option>
+  {topics.map((topic) => <option value={topic}>{topic}</option>)}
+</select>

@@ -4,6 +4,8 @@ import "../styles/global.css";
 import { initializeApp } from "firebase/app";
 import { child, get, getDatabase, ref } from "firebase/database";
 
+import Filter from "../components/Filter.astro";
+
 /**
  * Represents the question data.
  */
@@ -64,12 +66,17 @@ const app = initializeApp(firebaseConfig);
 const databaseRef = ref(getDatabase(app));
 
 let data: Data | null = null;
+let topics: Set<string> = new Set();
 
 try {
   const snapshot = await get(child(databaseRef, "/"));
 
   if (snapshot.exists()) {
     data = snapshot.val();
+
+    data.easy
+      .flatMap((question) => question.topics)
+      .forEach((topic) => topics.add(topic));
   } else {
     throw new Error("No data available.");
   }
@@ -78,76 +85,73 @@ try {
 }
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script
-      src="https://kit.fontawesome.com/70345ad354.js"
-      crossorigin="anonymous"
-    >
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://kit.fontawesome.com/70345ad354.js" crossorigin="anonymous">
 
-    </script>
-    <title>Rafael's List</title>
-  </head>
-  <body class="page">
-    <header class="header">
-      <h1 class="header__heading">Rafael's List</h1>
-      <nav class="header__nav">
-        <a
-          href="https://github.com/User5842/rafaels-list"
-          target="_blank"
-          rel="noopener"
-          ><i class="fa-brands fa-github-alt header__nav-item"></i>
-        </a>
-        <a
-          href="https://www.youtube.com/c/leetcodelive"
-          target="_blank"
-          rel="noopener"
-          ><i class="fa-brands fa-youtube header__nav-item"></i>
-        </a>
-      </nav>
-    </header>
+</script>
+<title>Rafael's List</title>
 
-    <section class="intro">
-      <p>
-        Here's a list of questions I came up with while <a
-          href="https://www.youtube.com/playlist?list=PLWzGjDEgHSJrDEUbJxp1J9KFyYg4G4l9Y"
-          >streaming myself doing every single question on LeetCode
-        </a>. Each question links to a part in a stream where I talk about the
-        problem. My intent is not to necessarily teach you how to solve these
-        questions (there are plenty of resources for that), but rather, to give
-        you a raw look into my thought process. You'll watch me make mistakes,
-        hear me struggle and hopefully develop an optimized algorithm by the
-        end.
-      </p>
-    </section>
+<body class="page">
+  <header class="header">
+    <h1 class="header__heading">Rafael's List</h1>
+    <nav class="header__nav">
+      <a
+        href="https://github.com/User5842/rafaels-list"
+        target="_blank"
+        rel="noopener"
+        ><i class="fa-brands fa-github-alt header__nav-item"></i>
+      </a>
+      <a
+        href="https://www.youtube.com/c/leetcodelive"
+        target="_blank"
+        rel="noopener"
+        ><i class="fa-brands fa-youtube header__nav-item"></i>
+      </a>
+    </nav>
+  </header>
 
-    <section class="list">
-      <details>
-        <summary class="list__difficulty">Easy</summary>
-        <ul class="list__questions">
-          {data.easy.map((question) => (
-            <li class="list__question">
-              <h3>{question.name}</h3>
-              <div class="list__meta">
-                <a class="list__link" href={question.video}>
-                  Stream Clip
-                </a>
-                <a class="list__link" href={question.link}>
-                  LeetCode Question
-                </a>
-                <details class="list__details">
-                  <summary>Topics</summary>
-                  {question.topics.map((topic) => (
-                    <p>{topic}</p>
-                  ))}
-                </details>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </details>
-    </section>
-  </body>
-</html>
+  <section class="intro">
+    <p>
+      Here's a list of questions I came up with while <a
+        href="https://www.youtube.com/playlist?list=PLWzGjDEgHSJrDEUbJxp1J9KFyYg4G4l9Y"
+        >streaming myself doing every single question on LeetCode
+      </a>. Each question links to a part in a stream where I talk about the
+      problem. My intent is not to necessarily teach you how to solve these
+      questions (there are plenty of resources for that), but rather, to give
+      you a raw look into my thought process. You'll watch me make mistakes,
+      hear me struggle and hopefully develop an optimized algorithm by the end.
+    </p>
+  </section>
+
+  <section class="filter" id="filter">
+    <Filter topics={[...topics.values()]} />
+  </section>
+
+  <section class="list">
+    <details>
+      <summary class="list__difficulty">Easy</summary>
+      <ul class="list__questions">
+        {data.easy.map((question) => (
+          <li class="list__question">
+            <h3>{question.name}</h3>
+            <div class="list__meta">
+              <a class="list__link" href={question.video}>
+                Stream Clip
+              </a>
+              <a class="list__link" href={question.link}>
+                LeetCode Question
+              </a>
+              <details class="list__details">
+                <summary>Topics</summary>
+                {question.topics.map((topic) => (
+                  <p>{topic}</p>
+                ))}
+              </details>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </details>
+  </section>
+</body>

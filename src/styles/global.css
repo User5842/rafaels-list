@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700;900&display=swap");
+@import "https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700;900&display=swap";
 
 * {
   box-sizing: border-box;
@@ -9,6 +9,28 @@
 a {
   color: white;
   text-decoration: underline;
+}
+
+select {
+  appearance: none;
+  background-color: #0f172a;
+  border: 1px solid #ebbe54;
+  border-radius: 0.25rem;
+  color: white;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  max-width: 35ch;
+  min-width: 15ch;
+  outline: none;
+  padding: 0.25rem;
+  width: 100%;
+}
+
+select::-ms-expand {
+  display: none;
 }
 
 .page {
@@ -41,6 +63,13 @@ a {
   font-size: 1.5rem;
 }
 
+.filter {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
 .intro,
 .list {
   color: #ebbe54;
@@ -66,10 +95,6 @@ a {
   margin-top: 1rem;
 }
 
-.list__question + .list__question {
-  margin-top: 1rem;
-}
-
 .list__question {
   align-items: flex-start;
   border: 1px solid white;
@@ -77,6 +102,10 @@ a {
   flex-direction: column;
   justify-content: space-between;
   padding: 0.5rem;
+}
+
+.list__question + .list__question {
+  margin-top: 1rem;
 }
 
 .list__question:hover {
