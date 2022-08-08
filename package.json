@@ -29,6 +29,7 @@
     "surge": "0.23.1"
   },
   "dependencies": {
+    "@types/google.analytics": "^0.0.42",
     "firebase": "9.9.2"
   }
 }
