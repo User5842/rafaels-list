@@ -71,6 +71,7 @@ select::-ms-expand {
 }
 
 .intro,
+.topics__label,
 .list {
   color: #ebbe54;
 }
