@@ -11,7 +11,7 @@
   "scripts": {
     "astro": "astro",
     "build": "astro build",
-    "deploy": "surge dist --domain kaput-wound.surge.sh",
+    "deploy": "surge dist --domain equable-oranges.surge.sh",
     "dev": "astro dev",
     "prebuild": "npm run prettier",
     "prettier": "prettier --write .",
