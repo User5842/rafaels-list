@@ -20,9 +20,11 @@ const { topics } = Astro.props;
           .map((topic) => topic.textContent)
           .includes(topic)
       );
+      console.log(filteredQuestions);
       filteredQuestionsFragment.append(...filteredQuestions);
     }
 
+    questionsContainer.innerHTML = "";
     questionsContainer.append(filteredQuestionsFragment);
   });
 </script>
