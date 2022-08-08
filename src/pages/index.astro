@@ -4,6 +4,51 @@ import "../styles/global.css";
 import { initializeApp } from "firebase/app";
 import { child, get, getDatabase, ref } from "firebase/database";
 
+/**
+ * Represents the question data.
+ */
+interface Data {
+  /**
+   * List of Easy questions.
+   */
+  readonly easy: Array<Question>;
+
+  /**
+   * List of Medium questions.
+   */
+  readonly medium: Array<Question>;
+
+  /**
+   * List of Hard questions.
+   */
+  readonly hard: Array<Question>;
+}
+
+/**
+ * Represents a single question.
+ */
+interface Question {
+  /**
+   * Link to the LeetCode question.
+   */
+  readonly link: string;
+
+  /**
+   * Name of the LeetCode question.
+   */
+  readonly name: string;
+
+  /**
+   * List of related topics.
+   */
+  readonly topics: Array<string>;
+
+  /**
+   * Link of the video stream section.
+   */
+  readonly video: string;
+}
+
 const firebaseConfig = {
   apiKey: import.meta.env.API_KEY,
   appId: import.meta.env.APP_ID,
@@ -18,7 +63,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const databaseRef = ref(getDatabase(app));
 
-let data = null;
+let data: Data | null = null;
 
 try {
   const snapshot = await get(child(databaseRef, "/"));

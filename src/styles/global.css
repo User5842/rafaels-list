@@ -74,15 +74,13 @@ a {
   align-items: flex-start;
   border: 1px solid white;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  opacity: 0.5;
   padding: 0.5rem;
-  transition: opacity 0.2s ease-in-out;
 }
 
 .list__question:hover {
   cursor: pointer;
-  opacity: 1;
 }
 
 .list__meta {
@@ -98,4 +96,20 @@ a {
 
 .list__details {
   cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .page {
+    width: calc(100% - 50px);
+  }
+
+  .list__meta {
+    display: unset;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .page {
+    width: calc(100% - 50px);
+  }
 }
