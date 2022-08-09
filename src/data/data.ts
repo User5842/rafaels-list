@@ -17,9 +17,7 @@ export const getData = async () => {
     if (snapshot.exists()) {
       data = snapshot.val();
 
-      data.easy
-        .flatMap((question) => question.topics)
-        .forEach((topic) => topics.add(topic));
+      data.easy.flatMap((question) => question.topics).forEach((topic) => topics.add(topic));
 
       return {
         data,
