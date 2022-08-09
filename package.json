@@ -16,6 +16,7 @@
     "prebuild": "npm run stylelint && npm run prettier",
     "prettier": "prettier --write .",
     "preview": "astro preview",
+    "release": "standard-version",
     "start": "astro dev",
     "stylelint": "stylelint \"**/*.css\" --fix"
   },
@@ -23,6 +24,7 @@
     "astro": "1.0.0-rc.7",
     "prettier": "2.7.1",
     "prettier-plugin-astro": "0.3.0",
+    "standard-version": "^9.5.0",
     "stylelint": "14.9.1",
     "stylelint-config-prettier": "9.0.3",
     "stylelint-config-standard": "26.0.0",

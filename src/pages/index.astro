@@ -4,6 +4,7 @@ import "../styles/global.css";
 import { initializeApp } from "firebase/app";
 import { child, get, getDatabase, ref } from "firebase/database";
 
+import Count from "../components/Count.astro";
 import Filter from "../components/Filter.astro";
 
 /**
@@ -68,6 +69,10 @@ const databaseRef = ref(getDatabase(app));
 let data: Data | null = null;
 let topics: Set<string> = new Set();
 
+let easyCount = 0;
+let mediumCount = 0;
+let hardCount = 0;
+
 try {
   const snapshot = await get(child(databaseRef, "/"));
 
@@ -77,6 +82,8 @@ try {
     data.easy
       .flatMap((question) => question.topics)
       .forEach((topic) => topics.add(topic));
+
+    easyCount = data.easy.length;
   } else {
     throw new Error("No data available.");
   }
@@ -120,8 +127,14 @@ try {
         rel="noopener"
         ><i class="fa-brands fa-youtube header__nav-item"></i>
       </a>
+      <a href="https://discord.gg/B45J8HKNth" target="_blank" rel="noopener"
+        ><i class="fa-brands fa-discord header__nav-item"></i>
+      </a>
     </nav>
   </header>
+
+  <Count easyCount={easyCount} mediumCount={mediumCount} hardCount={hardCount}
+  />
 
   <section class="intro">
     <p>
@@ -138,9 +151,7 @@ try {
     </p>
   </section>
 
-  <section class="filter" id="filter">
-    <Filter topics={[...topics.values()]} />
-  </section>
+  <Filter topics={[...topics.values()]} />
 
   <section class="list">
     <details>

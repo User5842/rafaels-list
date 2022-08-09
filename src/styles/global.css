@@ -63,6 +63,18 @@ select::-ms-expand {
   font-size: 1.5rem;
 }
 
+.count {
+  border: 1px solid #ebbe54;
+  border-radius: 0.25rem;
+  color: white;
+  display: flex;
+  font-weight: bold;
+  gap: 3rem;
+  margin-top: 1rem;
+  padding: 0.25rem;
+  width: fit-content;
+}
+
 .filter {
   align-items: center;
   display: flex;

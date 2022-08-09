@@ -29,9 +29,11 @@ const { topics } = Astro.props;
   });
 </script>
 
-<label class="topics__label" for="topics">Choose a topic:</label>
+<section class="filter">
+  <label class="topics__label" for="topics">Choose a topic:</label>
 
-<select class="topics" name="topics" id="topics">
-  <option value="">--Please choose a topic--</option>
-  {topics.map((topic: string) => <option value={topic}>{topic}</option>)}
-</select>
+  <select class="topics" name="topics" id="topics">
+    <option value="">--Please choose a topic--</option>
+    {topics.map((topic: string) => <option value={topic}>{topic}</option>)}
+  </select>
+</section>
