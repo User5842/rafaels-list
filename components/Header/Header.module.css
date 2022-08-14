@@ -1,0 +1,15 @@
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.header__heading {
+  color: white;
+}
+
+.header__nav {
+  display: flex;
+  gap: 1rem;
+}

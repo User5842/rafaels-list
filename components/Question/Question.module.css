@@ -1,0 +1,37 @@
+.list__question {
+  align-items: flex-start;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: space-between;
+  padding: 0.5rem;
+  user-select: none;
+}
+
+.list__question-complete {
+  border: 1px solid green;
+}
+
+.list__question + .list__question {
+  margin-top: 1rem;
+}
+
+.list__question:hover {
+  cursor: pointer;
+}
+
+.list__meta {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.list__link {
+  display: block;
+}
+
+.list__details {
+  cursor: pointer;
+}

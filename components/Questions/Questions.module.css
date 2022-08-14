@@ -1,0 +1,9 @@
+.questions {
+  list-style: none;
+  padding: 0;
+}
+
+.questions_difficulty {
+  cursor: pointer;
+  font-size: 1.2rem;
+}

@@ -3,6 +3,11 @@
  */
 export interface Question {
   /**
+   * Unique identifier for this question.
+   */
+  readonly id: string;
+
+  /**
    * Link to the LeetCode question.
    */
   readonly link: string;

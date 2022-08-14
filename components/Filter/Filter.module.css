@@ -1,0 +1,28 @@
+.filter {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.topics {
+  appearance: none;
+  background-color: #0f172a;
+  border: 1px solid #ebbe54;
+  border-radius: 0.25rem;
+  color: white;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  max-width: 35ch;
+  min-width: 15ch;
+  outline: none;
+  padding: 0.25rem;
+  width: 100%;
+}
+
+.topics::-ms-expand {
+  display: none;
+}

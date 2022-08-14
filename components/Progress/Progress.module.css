@@ -1,0 +1,18 @@
+.progress {
+  border: 1px solid #ebbe54;
+  border-radius: 0.25rem;
+  color: white;
+  display: flex;
+  padding: 0.7rem;
+  width: fit-content;
+}
+
+.progress__count {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.progress__count span {
+  font-weight: bold;
+}

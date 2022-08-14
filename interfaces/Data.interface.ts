@@ -7,15 +7,15 @@ export interface Data {
   /**
    * List of Easy questions.
    */
-  readonly easy: Array<Question>;
+  easy: Array<Question>;
 
   /**
    * List of Medium questions.
    */
-  readonly medium: Array<Question>;
+  medium?: Array<Question>;
 
   /**
    * List of Hard questions.
    */
-  readonly hard: Array<Question>;
+  hard?: Array<Question>;
 }
