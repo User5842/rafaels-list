@@ -1,8 +1,9 @@
 import { FunctionComponent } from "react";
 
 import styles from "./Questions.module.css";
-import Question from "../Question/Question";
+
 import { Question as QuestionInterface } from "../../interfaces/Question.interface";
+import Question from "../Question/Question";
 
 const Questions: FunctionComponent<{ easy: Array<QuestionInterface> }> = ({
   easy,

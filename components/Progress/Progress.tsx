@@ -1,6 +1,8 @@
 import { FunctionComponent } from "react";
-import { ProgressProps } from "../../interfaces/props/Progress.props";
+
 import styles from "./Progress.module.css";
+
+import { ProgressProps } from "../../interfaces/props/Progress.props";
 
 const Progress: FunctionComponent<ProgressProps> = ({
   easyCount,

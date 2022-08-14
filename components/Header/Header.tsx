@@ -1,11 +1,11 @@
-import styles from "./Header.module.css";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDiscord,
   faGithubAlt,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import styles from "./Header.module.css";
 
 const Header = () => (
   <header className={styles.header}>

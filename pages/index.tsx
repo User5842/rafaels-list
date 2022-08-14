@@ -1,16 +1,16 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Header from "../components/Header/Header";
-import styles from "../styles/Home.module.css";
-import Intro from "../components/Intro/Intro";
-import Questions from "../components/Questions/Questions";
-
 import { initializeApp } from "firebase/app";
 import { child, get, getDatabase, ref } from "firebase/database";
-import { Data } from "../interfaces/Data.interface";
-import Filter from "../components/Filter/Filter";
+import type { NextPage } from "next";
+import Head from "next/head";
 import { FormEvent, useState } from "react";
+
+import Filter from "../components/Filter/Filter";
+import Header from "../components/Header/Header";
+import Intro from "../components/Intro/Intro";
 import Progress from "../components/Progress/Progress";
+import Questions from "../components/Questions/Questions";
+import { Data } from "../interfaces/Data.interface";
+import styles from "../styles/Home.module.css";
 
 const Home: NextPage<{ data: Data; topics: Array<string> }> = ({
   data,

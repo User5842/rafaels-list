@@ -1,5 +1,7 @@
 import { FunctionComponent } from "react";
+
 import styles from "./Filter.module.css";
+
 import { FilterProps } from "../../interfaces/props/Filter.props";
 
 const Filter: FunctionComponent<FilterProps> = ({ onFilterChange, topics }) => {

@@ -1,9 +1,9 @@
 import { FunctionComponent, useEffect, useState } from "react";
-import { Question as QuestionInterface } from "../../interfaces/Question.interface";
-
-import { local } from "../../store/local";
 
 import styles from "./Question.module.css";
+
+import { Question as QuestionInterface } from "../../interfaces/Question.interface";
+import { local } from "../../store/local";
 
 const Question: FunctionComponent<QuestionInterface> = ({
   id,
