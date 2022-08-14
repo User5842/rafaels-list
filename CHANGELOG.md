@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/User5842/rafaels-list/compare/v1.0.6...v2.1.0) (2022-08-14)
+
+
+### Features
+
+* **app:** update to nextjs; added support for question tracking ([4743a05](https://github.com/User5842/rafaels-list/commit/4743a05d34283df740b179587ee36c0e69bb132c))
+
 ### 1.0.6 (2022-08-13)
 
 ### [1.0.5](https://github.com/User5842/rafaels-list/compare/v1.0.4...v1.0.5) (2022-08-10)
