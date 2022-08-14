@@ -21,7 +21,7 @@ const Home: NextPage<{ data: Data; topics: Array<string> }> = ({
   const filterChange = (e: FormEvent<HTMLElement>) => {
     const target = e.target as HTMLSelectElement;
     const filter = target.value;
-    setEasyQuestions((_) =>
+    setEasyQuestions(() =>
       filter.length > 0
         ? [...data.easy].filter((question) => question.topics.includes(filter))
         : data.easy
