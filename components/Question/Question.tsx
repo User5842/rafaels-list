@@ -16,6 +16,7 @@ const Question: FunctionComponent<QuestionInterface> = ({
 
   const questionClick = (e: React.MouseEvent<HTMLLIElement>) => {
     const target = e.target as HTMLLIElement;
+    if (target.tagName !== "LI") return;
     const className = `${styles["list__question-complete"]}`;
 
     if (target.classList.contains(className)) {

@@ -4,3 +4,15 @@
   padding: 1rem 0;
   width: calc(100% - 200px);
 }
+
+@media screen and (max-width: 1024px) {
+  .main {
+    width: calc(100% - 100px);
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .main {
+    width: calc(100% - 60px);
+  }
+}
