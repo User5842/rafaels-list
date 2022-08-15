@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.2](https://github.com/User5842/rafaels-list/compare/v2.1.1...v2.1.2) (2022-08-15)
+
+
+### Bug Fixes
+
+* **favicon:** changed favicon ([fa9d6b3](https://github.com/User5842/rafaels-list/commit/fa9d6b314fdefd92b1d837e5760330605514b269))
+
 ### [2.1.1](https://github.com/User5842/rafaels-list/compare/v2.1.0...v2.1.1) (2022-08-15)
 
 
