@@ -1,9 +1,10 @@
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useContext, useEffect, useState } from "react";
 
 import styles from "./Question.module.css";
 
 import { Question as QuestionInterface } from "../../interfaces/Question.interface";
 import { local } from "../../store/local";
+import DataContext from "../../store/store";
 
 const Question: FunctionComponent<QuestionInterface> = ({
   id,
@@ -12,7 +13,9 @@ const Question: FunctionComponent<QuestionInterface> = ({
   topics,
   video,
 }) => {
-  const [completed, setCompleted] = useState(false);
+  const context = useContext(DataContext);
+
+  const [questionCompleted, setQuestionCompleted] = useState(false);
 
   const questionClick = (e: React.MouseEvent<HTMLLIElement>) => {
     const target = e.target as HTMLLIElement;
@@ -26,16 +29,18 @@ const Question: FunctionComponent<QuestionInterface> = ({
       target.classList.add(className);
       local.set(id, true);
     }
+
+    context.setCompleted(local.get("completed"));
   };
 
   useEffect(() => {
-    if (local.get(id)) setCompleted(true);
+    if (local.get(id)) setQuestionCompleted(true);
   }, [id]);
 
   return (
     <li
       className={`${styles.list__question} ${
-        completed ? styles["list__question-complete"] : ""
+        questionCompleted ? styles["list__question-complete"] : ""
       }`}
       onClick={questionClick}
     >

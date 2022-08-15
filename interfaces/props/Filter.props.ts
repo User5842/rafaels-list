@@ -8,9 +8,4 @@ export interface FilterProps {
    * Handler for the filter change event.
    */
   readonly onFilterChange: (_: FormEvent<HTMLElement>) => void;
-
-  /**
-   * List of question topics.
-   */
-  readonly topics: Array<string>;
 }

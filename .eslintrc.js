@@ -15,6 +15,7 @@ module.exports = {
   plugins: ["@typescript-eslint", "import"],
   root: true,
   rules: {
+    "react-hooks/exhaustive-deps": "off",
     "import/no-unresolved": "error",
     "import/order": [
       1,

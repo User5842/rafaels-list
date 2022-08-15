@@ -1,14 +1,22 @@
-import { FunctionComponent } from "react";
+import { LinearProgress } from "@mui/material";
+import { FunctionComponent, useContext, useEffect, useState } from "react";
 
 import styles from "./Progress.module.css";
 
 import { ProgressProps } from "../../interfaces/props/Progress.props";
+import DataContext from "../../store/store";
 
 const Progress: FunctionComponent<ProgressProps> = ({
-  easyCount,
+  easyCount = 0,
   mediumCount = 0,
   hardCount = 0,
 }) => {
+  const context = useContext(DataContext);
+  const [completed, setCompleted] = useState(context.completed);
+  const total = easyCount + mediumCount + hardCount;
+
+  useEffect(() => setCompleted(context.completed), [context.completed]);
+
   return (
     <section className={styles.progress}>
       <div className={styles.progress__count}>
@@ -26,6 +34,7 @@ const Progress: FunctionComponent<ProgressProps> = ({
           <span>Total: </span> {easyCount + mediumCount + hardCount}
         </p>
       </div>
+      <LinearProgress variant="determinate" value={(completed / total) * 100} />
     </section>
   );
 };

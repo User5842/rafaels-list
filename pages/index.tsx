@@ -1,52 +1,27 @@
 import { initializeApp } from "firebase/app";
 import { child, get, getDatabase, ref } from "firebase/database";
 import type { NextPage } from "next";
-import Head from "next/head";
-import { FormEvent, useState } from "react";
+import { useContext, useEffect } from "react";
 
-import Filter from "../components/Filter/Filter";
-import Header from "../components/Header/Header";
-import Intro from "../components/Intro/Intro";
-import Progress from "../components/Progress/Progress";
-import Questions from "../components/Questions/Questions";
+import Main from "../components/Main/Main";
 import { Data } from "../interfaces/Data.interface";
-import styles from "../styles/Home.module.css";
+import { local } from "../store/local";
+import DataContext from "../store/store";
 
 const Home: NextPage<{ data: Data; topics: Array<string> }> = ({
   data,
   topics,
 }) => {
-  const [easyQuestions, setEasyQuestions] = useState(data.easy);
+  const context = useContext(DataContext);
 
-  const filterChange = (e: FormEvent<HTMLElement>) => {
-    const target = e.target as HTMLSelectElement;
-    const filter = target.value;
-    setEasyQuestions(() =>
-      filter.length > 0
-        ? [...data.easy].filter((question) => question.topics.includes(filter))
-        : data.easy
-    );
-  };
+  useEffect(() => {
+    context.setCompleted(local.get("completed"));
+    context.setData(data);
+    context.setEasyQuestions(data.easy);
+    context.setTopics(topics);
+  }, []);
 
-  return (
-    <>
-      <Head>
-        <title>Rafael&apos;s List</title>
-        <meta
-          name="description"
-          content="High-quality LeetCode questions with live-video links."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className={styles.main}>
-        <Header />
-        <Intro />
-        <Progress easyCount={easyQuestions.length} />
-        <Filter topics={topics} onFilterChange={filterChange} />
-        <Questions easy={easyQuestions} />
-      </main>
-    </>
-  );
+  return <Main />;
 };
 
 export async function getServerSideProps() {

@@ -4,17 +4,15 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [2.1.2](https://github.com/User5842/rafaels-list/compare/v2.1.1...v2.1.2) (2022-08-15)
 
-
 ### Bug Fixes
 
-* **favicon:** changed favicon ([fa9d6b3](https://github.com/User5842/rafaels-list/commit/fa9d6b314fdefd92b1d837e5760330605514b269))
+- **favicon:** changed favicon ([fa9d6b3](https://github.com/User5842/rafaels-list/commit/fa9d6b314fdefd92b1d837e5760330605514b269))
 
 ### [2.1.1](https://github.com/User5842/rafaels-list/compare/v2.1.0...v2.1.1) (2022-08-15)
 
-
 ### Bug Fixes
 
-* **styles:** refactor styles ([96cf8a3](https://github.com/User5842/rafaels-list/commit/96cf8a301bc8874520234aa9863903732e14c91d))
+- **styles:** refactor styles ([96cf8a3](https://github.com/User5842/rafaels-list/commit/96cf8a301bc8874520234aa9863903732e14c91d))
 
 ## [2.1.0](https://github.com/User5842/rafaels-list/compare/v1.0.6...v2.1.0) (2022-08-14)
 

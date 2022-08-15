@@ -5,15 +5,15 @@ export interface ProgressProps {
   /**
    * Amount of easy questions.
    */
-  readonly easyCount: number;
+  readonly easyCount: number | undefined;
 
   /**
    * Amount of medium questions.
    */
-  readonly mediumCount?: number;
+  readonly mediumCount?: number | undefined;
 
   /**
    * Amount of hard questions.
    */
-  readonly hardCount?: number;
+  readonly hardCount?: number | undefined;
 }

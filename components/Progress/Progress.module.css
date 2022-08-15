@@ -3,6 +3,8 @@
   border-radius: 0.25rem;
   color: white;
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
   padding: 0.7rem;
   width: fit-content;
 }

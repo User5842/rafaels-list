@@ -5,9 +5,9 @@ import styles from "./Questions.module.css";
 import { Question as QuestionInterface } from "../../interfaces/Question.interface";
 import Question from "../Question/Question";
 
-const Questions: FunctionComponent<{ easy: Array<QuestionInterface> }> = ({
-  easy,
-}) => {
+const Questions: FunctionComponent<{
+  easy: Array<QuestionInterface> | undefined;
+}> = ({ easy }) => {
   return (
     <section>
       <details>
