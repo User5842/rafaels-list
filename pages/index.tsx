@@ -36,7 +36,7 @@ export async function getServerSideProps() {
   return {
     props: {
       data,
-      uniqueTopics,
+      topics: uniqueTopics,
     },
   };
 }
