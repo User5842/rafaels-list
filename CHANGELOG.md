@@ -2,12 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [2.1.4](https://github.com/User5842/rafaels-list/compare/v2.1.3...v2.1.4) (2022-08-17)
-
+### [2.1.5](https://github.com/User5842/rafaels-list/compare/v2.1.3...v2.1.5) (2022-08-18)
 
 ### Bug Fixes
 
-* correctly name props variable for topics ([fe9a758](https://github.com/User5842/rafaels-list/commit/fe9a758ee989f9ebaa89ecce20e4c51e8e4d072b))
+- add zustand for state management, general refactoring, adding robots.txt ([6aae65a](https://github.com/User5842/rafaels-list/commit/6aae65ab37bd30ca01a11f78ae3425f03e0cdc63))
+- correctly name props variable for topics ([820a572](https://github.com/User5842/rafaels-list/commit/820a572bb435f786b823caf658344db645c80300))
+
+### [2.1.4](https://github.com/User5842/rafaels-list/compare/v2.1.3...v2.1.4) (2022-08-17)
+
+### Bug Fixes
+
+- correctly name props variable for topics ([fe9a758](https://github.com/User5842/rafaels-list/commit/fe9a758ee989f9ebaa89ecce20e4c51e8e4d072b))
 
 ### [2.1.3](https://github.com/User5842/rafaels-list/compare/v2.1.2...v2.1.3) (2022-08-15)
 

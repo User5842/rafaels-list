@@ -1,40 +1,38 @@
 import { LinearProgress } from "@mui/material";
-import { FunctionComponent, useContext, useEffect, useState } from "react";
 
 import styles from "./Progress.module.css";
 
-import { ProgressProps } from "../../interfaces/props/Progress.props";
-import DataContext from "../../store/store";
+import useQuestionsStore from "../../store/store";
 
-const Progress: FunctionComponent<ProgressProps> = ({
-  easyCount = 0,
-  mediumCount = 0,
-  hardCount = 0,
-}) => {
-  const context = useContext(DataContext);
-  const [completed, setCompleted] = useState(context.completed);
-  const total = easyCount + mediumCount + hardCount;
-
-  useEffect(() => setCompleted(context.completed), [context.completed]);
+const Progress = () => {
+  const {
+    completed,
+    data: { easy, medium, hard },
+  } = useQuestionsStore();
+  const total = easy.length + medium.length + hard.length;
 
   return (
     <section className={styles.progress}>
       <div className={styles.progress__count}>
         <p>
-          <span>{easyCount}</span> easy
+          <span>{easy.length}</span> easy
         </p>
         <p>
-          <span>{mediumCount}</span> medium
+          <span>{medium.length}</span> medium
         </p>
         <p>
-          <span>{hardCount}</span> hard
+          <span>{hard.length}</span> hard
         </p>
         {"|"}
         <p>
-          <span>Total: </span> {easyCount + mediumCount + hardCount}
+          <span>Total: </span> {total}
         </p>
       </div>
-      <LinearProgress variant="determinate" value={(completed / total) * 100} />
+      <LinearProgress
+        role={"progressbar"}
+        variant="determinate"
+        value={(completed / total) * 100}
+      />
     </section>
   );
 };
