@@ -1,10 +1,9 @@
-import { initializeApp } from "firebase/app";
-import { child, get, getDatabase, ref } from "firebase/database";
 import type { NextPage } from "next";
 import { useContext, useEffect } from "react";
 
 import Main from "../components/Main/Main";
 import { Data } from "../interfaces/Data.interface";
+import prisma from "../lib/prisma";
 import { local } from "../store/local";
 import DataContext from "../store/store";
 
@@ -25,38 +24,21 @@ const Home: NextPage<{ data: Data; topics: Array<string> }> = ({
 };
 
 export async function getServerSideProps() {
-  const app = initializeApp({
-    apiKey: process.env.API_KEY,
-    appId: process.env.APP_ID,
-    authDomain: process.env.AUTH_DOMAIN,
-    databaseURL: process.env.DATABASE_URL,
-    measurementId: process.env.MEASUREMENT_ID,
-    messagingSenderId: process.env.MESSAGING_SENDER_ID,
-    projectId: process.env.PROJECT_ID,
-    storageBucket: process.env.STORAGE_BUCKET,
-  });
+  const questions = await prisma.question.findMany();
 
-  const topics = new Set<string>();
+  const data: Data = {
+    easy: questions,
+  };
 
-  const databaseRef = ref(getDatabase(app));
+  const allTopics = questions.flatMap((question) => question.topics);
+  const uniqueTopics = [...new Set(allTopics)];
 
-  const snapshot = await get(child(databaseRef, "/"));
-
-  if (snapshot.exists()) {
-    const data = snapshot.val() as Data;
-    data.easy
-      .flatMap((question) => question.topics)
-      .forEach((topic) => topics.add(topic));
-
-    return {
-      props: {
-        data,
-        topics: [...topics.values()],
-      },
-    };
-  } else {
-    throw new Error("No data available.");
-  }
+  return {
+    props: {
+      data,
+      uniqueTopics,
+    },
+  };
 }
 
 export default Home;

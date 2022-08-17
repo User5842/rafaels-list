@@ -3,6 +3,11 @@
  */
 export interface Question {
   /**
+   * Question difficulty.
+   */
+  readonly difficulty: string;
+
+  /**
    * Unique identifier for this question.
    */
   readonly id: string;
