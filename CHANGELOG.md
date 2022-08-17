@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.4](https://github.com/User5842/rafaels-list/compare/v2.1.3...v2.1.4) (2022-08-17)
+
+
+### Bug Fixes
+
+* correctly name props variable for topics ([fe9a758](https://github.com/User5842/rafaels-list/commit/fe9a758ee989f9ebaa89ecce20e4c51e8e4d072b))
+
 ### [2.1.3](https://github.com/User5842/rafaels-list/compare/v2.1.2...v2.1.3) (2022-08-15)
 
 ### [2.1.2](https://github.com/User5842/rafaels-list/compare/v2.1.1...v2.1.2) (2022-08-15)
