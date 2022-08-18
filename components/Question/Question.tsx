@@ -1,10 +1,9 @@
-import { FunctionComponent, useContext, useEffect, useState } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 
 import styles from "./Question.module.css";
 
 import { Question as QuestionInterface } from "../../interfaces/Question.interface";
-import { local } from "../../store/local";
-import DataContext from "../../store/store";
+import useQuestionsStore from "../../store/store";
 
 const Question: FunctionComponent<QuestionInterface> = ({
   id,
@@ -13,64 +12,78 @@ const Question: FunctionComponent<QuestionInterface> = ({
   topics,
   video,
 }) => {
-  const context = useContext(DataContext);
+  const {
+    addToLocalStorage,
+    removeFromLocalStorage,
+    markQuestionComplete,
+    markQuestionIncomplete,
+    retrieveFromLocalStorage,
+  } = useQuestionsStore();
 
-  const [questionCompleted, setQuestionCompleted] = useState(false);
+  let didInit = false;
 
-  const questionClick = (e: React.MouseEvent<HTMLLIElement>) => {
-    const target = e.target as HTMLLIElement;
-    if (target.tagName !== "LI") return;
-    const className = `${styles["list__question-complete"]}`;
+  const [questionComplete, setQuestionComplete] = useState<boolean | null>();
 
-    if (target.classList.contains(className)) {
-      target.classList.remove(className);
-      local.remove(id);
+  const questionClick = () => {
+    if (questionComplete) {
+      markQuestionIncomplete();
+      removeFromLocalStorage(id);
+      setQuestionComplete(false);
     } else {
-      target.classList.add(className);
-      local.set(id, true);
+      markQuestionComplete();
+      addToLocalStorage(id);
+      setQuestionComplete(true);
     }
-
-    context.setCompleted(local.get("completed"));
   };
 
   useEffect(() => {
-    if (local.get(id)) setQuestionCompleted(true);
+    if (!didInit) {
+      didInit = true;
+      if (retrieveFromLocalStorage(id)) {
+        markQuestionComplete();
+        setQuestionComplete(true);
+      }
+    }
   }, [id]);
 
   return (
     <li
-      className={`${styles.list__question} ${
-        questionCompleted ? styles["list__question-complete"] : ""
+      className={`${styles.question} ${
+        questionComplete ? styles.question__complete : ""
       }`}
-      onClick={questionClick}
     >
-      <h3>{name}</h3>
-      <div className={styles.list__meta}>
-        <a
-          className={styles.list__link}
-          href={video}
-          rel="noopener noreferrer"
-          target="_blank"
-          title="YouTube Stream Clip"
-        >
-          Stream Clip
-        </a>
-        <a
-          className={styles.list__link}
-          href={link}
-          rel="noopener noreferrer"
-          target="_blank"
-          title="LeetCode Question"
-        >
-          LeetCode Question
-        </a>
-        <details className={styles.list__details}>
-          <summary>Topics</summary>
-          {topics.map((topic, index) => (
-            <p key={index}>{topic}</p>
-          ))}
-        </details>
+      <div className={styles.question__data}>
+        <h3>{name}</h3>
+        <div className={styles.question__meta}>
+          <a
+            className={styles.question__link}
+            href={video}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="YouTube Stream Clip"
+          >
+            Stream Clip
+          </a>
+          <a
+            className={styles.question__link}
+            href={link}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="LeetCode Question"
+          >
+            LeetCode Question
+          </a>
+          <details className={styles.question__details}>
+            <summary>Topics</summary>
+            {topics.map((topic, index) => (
+              <p key={index}>{topic}</p>
+            ))}
+          </details>
+        </div>
       </div>
+      <span className={styles.question__button} onClick={questionClick}>
+        ✅
+      </span>
     </li>
   );
 };

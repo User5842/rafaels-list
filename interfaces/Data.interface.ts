@@ -12,10 +12,10 @@ export interface Data {
   /**
    * List of Medium questions.
    */
-  medium?: Array<Question>;
+  medium: Array<Question>;
 
   /**
    * List of Hard questions.
    */
-  hard?: Array<Question>;
+  hard: Array<Question>;
 }

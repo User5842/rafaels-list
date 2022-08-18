@@ -1,12 +1,13 @@
-import { FunctionComponent, useContext } from "react";
+import { FunctionComponent } from "react";
 
 import styles from "./Filter.module.css";
+import { FilterProps } from "./Filter.props";
 
-import { FilterProps } from "../../interfaces/props/Filter.props";
-import DataContext from "../../store/store";
+import useQuestionsStore from "../../store/store";
 
 const Filter: FunctionComponent<FilterProps> = ({ onFilterChange }) => {
-  const { topics } = useContext(DataContext);
+  const { topics } = useQuestionsStore();
+
   return (
     <section className={styles.filter} onChange={onFilterChange}>
       <label htmlFor="topics">Choose a topic:</label>
