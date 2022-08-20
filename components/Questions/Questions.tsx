@@ -1,20 +1,18 @@
-import { FunctionComponent } from "react";
-
 import styles from "./Questions.module.css";
 
-import { Question as QuestionInterface } from "../../interfaces/Question.interface";
+import useQuestionsStore from "../../store/store";
 import Question from "../Question/Question";
 
-const Questions: FunctionComponent<{
-  easy: Array<QuestionInterface> | undefined;
-}> = ({ easy }) => {
+const Questions = () => {
+  const { data } = useQuestionsStore();
+
   return (
     <section>
       <details>
         <summary className={styles.questions_difficulty}>Easy</summary>
         <ul className={styles.questions}>
-          {easy &&
-            easy.map((question) => (
+          {data.easy &&
+            data.easy.map((question) => (
               <Question key={question.id} {...question} />
             ))}
         </ul>

@@ -3,6 +3,7 @@ import {
   faGithubAlt,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import { faShirt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styles from "./Header.module.css";
@@ -44,6 +45,18 @@ const Header = () => (
         <FontAwesomeIcon
           color="white"
           icon={faDiscord}
+          style={{ fontSize: "1.5rem" }}
+        />
+      </a>
+      <a
+        href="https://livecoding.creator-spring.com"
+        rel="noopener noreferrer"
+        target="_blank"
+        title="Spring"
+      >
+        <FontAwesomeIcon
+          color="white"
+          icon={faShirt}
           style={{ fontSize: "1.5rem" }}
         />
       </a>

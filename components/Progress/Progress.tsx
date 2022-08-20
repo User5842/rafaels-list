@@ -8,8 +8,8 @@ const Progress = () => {
   const {
     completed,
     data: { easy, medium, hard },
+    total,
   } = useQuestionsStore();
-  const total = easy.length + medium.length + hard.length;
 
   return (
     <section className={styles.progress}>

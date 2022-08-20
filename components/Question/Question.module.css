@@ -9,6 +9,7 @@
 
 .question__data {
   display: flex;
+  flex: 0.5;
   flex-direction: column;
   gap: 0.5rem;
 }
@@ -25,7 +26,6 @@
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
-  gap: 3rem;
 }
 
 .question__link {
