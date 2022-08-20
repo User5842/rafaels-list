@@ -15,11 +15,12 @@ const Home: NextPage<{ data: Data; topics: Array<string> }> = ({
   data,
   topics,
 }) => {
-  const { setData, setTopics } = useQuestionsStore();
+  const { setData, setTopics, setTotal } = useQuestionsStore();
 
   useEffect(() => {
     setData(data);
     setTopics(topics);
+    setTotal(data.easy.length + data.medium.length + data.hard.length);
   }, []);
 
   const filterChange = ({
@@ -71,7 +72,7 @@ const Home: NextPage<{ data: Data; topics: Array<string> }> = ({
         </section>
         <Progress />
         <Filter onFilterChange={filterChange} />
-        <Questions easy={data.easy} />
+        <Questions />
       </main>
     </>
   );

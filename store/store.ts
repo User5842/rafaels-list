@@ -6,6 +6,7 @@ interface DataState {
   completed: number;
   data: Data;
   topics: Array<string>;
+  total: number;
   addToLocalStorage: (id: string) => void;
   markQuestionComplete: () => void;
   markQuestionIncomplete: () => void;
@@ -13,12 +14,14 @@ interface DataState {
   retrieveFromLocalStorage: (id: string) => boolean | null;
   setData: (newData: Data) => void;
   setTopics: (newTopics: Array<string>) => void;
+  setTotal: (newTotal: number) => void;
 }
 
 const useQuestionsStore = create<DataState>()((set) => ({
   completed: 0,
   data: { easy: [], medium: [], hard: [] },
   topics: [],
+  total: 0,
   addToLocalStorage: (id) => ls.set(id, true),
   markQuestionComplete: () =>
     set((state) => ({ completed: state.completed + 1 })),
@@ -28,6 +31,7 @@ const useQuestionsStore = create<DataState>()((set) => ({
   retrieveFromLocalStorage: (id) => ls.get(id),
   setData: (newData) => set(() => ({ data: { ...newData } })),
   setTopics: (newTopics) => set(() => ({ topics: newTopics })),
+  setTotal: (newTotal) => set(() => ({ total: newTotal })),
 }));
 
 export default useQuestionsStore;
