@@ -44,10 +44,15 @@ const Home: NextPage<{ data: Data; topics: Array<string> }> = ({
     <>
       <Head>
         <title>Rafael&apos;s List</title>
+        <meta charSet="utf-8" />
         <meta
           name="description"
           content="High-quality LeetCode questions with live-video links."
         />
+        <meta property="og:title" content="Rafael's List" />
+        <meta property="og:type" content="list.rafael" />
+        <meta property="og:url" content="https://www.rafaelslist.com" />
+        <meta property="og:image" content="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
