@@ -4,12 +4,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [2.1.6](https://github.com/User5842/rafaels-list/compare/v2.1.3...v2.1.6) (2022-08-20)
 
-
 ### Bug Fixes
 
-* add zustand for state management, general refactoring, adding robots.txt ([7ceaa05](https://github.com/User5842/rafaels-list/commit/7ceaa05a29f79336a939f40531bed46ddefd350d))
-* correctly name props variable for topics ([820a572](https://github.com/User5842/rafaels-list/commit/820a572bb435f786b823caf658344db645c80300))
-* **questions:** fix styling issue; fix question display issue; ([d407754](https://github.com/User5842/rafaels-list/commit/d407754d9479f39850ba44691cda4f8e2488f129))
+- add zustand for state management, general refactoring, adding robots.txt ([7ceaa05](https://github.com/User5842/rafaels-list/commit/7ceaa05a29f79336a939f40531bed46ddefd350d))
+- correctly name props variable for topics ([820a572](https://github.com/User5842/rafaels-list/commit/820a572bb435f786b823caf658344db645c80300))
+- **questions:** fix styling issue; fix question display issue; ([d407754](https://github.com/User5842/rafaels-list/commit/d407754d9479f39850ba44691cda4f8e2488f129))
 
 ### [2.1.5](https://github.com/User5842/rafaels-list/compare/v2.1.3...v2.1.5) (2022-08-18)
 
