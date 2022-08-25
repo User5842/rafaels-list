@@ -65,11 +65,25 @@ const Home: NextPage<{ data: Data; topics: Array<string> }> = ({
           name="description"
           content="High-quality LeetCode questions with live-video links."
         />
+        <meta property="og:url" content="https://www.rafaelslist.com/" />
+        <meta property="og:type" content="website" />
         <meta property="og:title" content="Rafael's List" />
-        <meta property="og:type" content="list.rafael" />
-        <meta property="og:url" content="https://www.rafaelslist.com" />
-        <meta property="og:image" content="/favicon.ico" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:description"
+          content="High-quality LeetCode questions with live-video links."
+        />
+        <meta property="og:image" content="https://rafaelslist.com/cube.svg" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="rafaelslist.com" />
+        <meta property="twitter:url" content="https://www.rafaelslist.com/" />
+        <meta name="twitter:title" content="Rafael's List" />
+        <meta
+          name="twitter:description"
+          content="High-quality LeetCode questions with live-video links."
+        />
+        <meta name="twitter:image" content="https://rafaelslist.com/cube.svg" />
+        <link rel="icon" href="/cube.svg" />
       </Head>
       <main className={styles.main}>
         <Header />
