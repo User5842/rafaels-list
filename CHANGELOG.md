@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.8](https://github.com/User5842/rafaels-list/compare/v2.1.7...v2.1.8) (2022-08-25)
+
+
+### Bug Fixes
+
+* **search:** modify search styles ([28eb40f](https://github.com/User5842/rafaels-list/commit/28eb40f876abcd7db50df701e9de925cd24e0a4a))
+
 ### [2.1.7](https://github.com/User5842/rafaels-list/compare/v2.1.6...v2.1.7) (2022-08-25)
 
 ### Bug Fixes
