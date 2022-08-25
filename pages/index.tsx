@@ -6,6 +6,7 @@ import Filter from "../components/Filter/Filter";
 import Header from "../components/Header/Header";
 import Progress from "../components/Progress/Progress";
 import Questions from "../components/Questions/Questions";
+import Search from "../components/Search/Search";
 import { Data } from "../interfaces/Data.interface";
 import prisma from "../lib/prisma";
 import useQuestionsStore from "../store/store";
@@ -38,6 +39,21 @@ const Home: NextPage<{ data: Data; topics: Array<string> }> = ({
     }
 
     setData(filteredData);
+  };
+
+  const searchChange = ({
+    target: { value },
+  }: React.ChangeEvent<HTMLInputElement>) => {
+    let searchedData = { ...data };
+
+    searchedData = {
+      ...searchedData,
+      easy: [...data.easy].filter((question) =>
+        question.name.toLowerCase().includes(value.toLowerCase())
+      ),
+    };
+
+    setData(searchedData);
   };
 
   return (
@@ -76,7 +92,10 @@ const Home: NextPage<{ data: Data; topics: Array<string> }> = ({
           </p>
         </section>
         <Progress />
-        <Filter onFilterChange={filterChange} />
+        <div className={styles.controls}>
+          <Filter onFilterChange={filterChange} />
+          <Search onSearchChange={searchChange} />
+        </div>
         <Questions />
       </main>
     </>

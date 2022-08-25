@@ -1,4 +1,4 @@
-.filter {
+.search {
   align-items: center;
   display: flex;
   flex: 0.5;
@@ -6,24 +6,15 @@
   margin: 0;
 }
 
-.topics {
-  appearance: none;
+.search__input {
   background-color: #0f172a;
   border: 1px solid #ebbe54;
   border-radius: 0.25rem;
   color: white;
-  cursor: pointer;
   font-family: inherit;
   font-size: inherit;
-  line-height: inherit;
-  margin: 0;
   max-width: 35ch;
   min-width: 15ch;
-  outline: none;
   padding: 0.25rem;
   width: 100%;
-}
-
-.topics::-ms-expand {
-  display: none;
 }
