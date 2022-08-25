@@ -2,16 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [2.1.7](https://github.com/User5842/rafaels-list/compare/v2.1.6...v2.1.7) (2022-08-25)
+### [2.1.8](https://github.com/User5842/rafaels-list/compare/v2.1.7...v2.1.8) (2022-08-25)
 
 
 ### Bug Fixes
 
-* **deps:** pin dependencies ([b921693](https://github.com/User5842/rafaels-list/commit/b921693cadd91ecb1641972936bad2279e915483))
-* **deps:** pin dependency @fortawesome/free-solid-svg-icons to 6.1.2 ([a5f7db8](https://github.com/User5842/rafaels-list/commit/a5f7db872d1088efce39f9b2ff4113f0f65faf46))
-* **deps:** update dependency @mui/material to v5.10.1 ([ecea30d](https://github.com/User5842/rafaels-list/commit/ecea30d32ec7e5b9b0880dd04ad78230cff3237d))
-* **deps:** update dependency zustand to v4.1.1 ([9207452](https://github.com/User5842/rafaels-list/commit/92074526f3b310dd197462071d31e569b50fcce1))
-* update favicon ([ffc545e](https://github.com/User5842/rafaels-list/commit/ffc545e1bc8d74fd9f077483cea7bce9425639c4))
+* **search:** modify search styles ([28eb40f](https://github.com/User5842/rafaels-list/commit/28eb40f876abcd7db50df701e9de925cd24e0a4a))
+
+### [2.1.7](https://github.com/User5842/rafaels-list/compare/v2.1.6...v2.1.7) (2022-08-25)
+
+### Bug Fixes
+
+- **deps:** pin dependencies ([b921693](https://github.com/User5842/rafaels-list/commit/b921693cadd91ecb1641972936bad2279e915483))
+- **deps:** pin dependency @fortawesome/free-solid-svg-icons to 6.1.2 ([a5f7db8](https://github.com/User5842/rafaels-list/commit/a5f7db872d1088efce39f9b2ff4113f0f65faf46))
+- **deps:** update dependency @mui/material to v5.10.1 ([ecea30d](https://github.com/User5842/rafaels-list/commit/ecea30d32ec7e5b9b0880dd04ad78230cff3237d))
+- **deps:** update dependency zustand to v4.1.1 ([9207452](https://github.com/User5842/rafaels-list/commit/92074526f3b310dd197462071d31e569b50fcce1))
+- update favicon ([ffc545e](https://github.com/User5842/rafaels-list/commit/ffc545e1bc8d74fd9f077483cea7bce9425639c4))
 
 ### [2.1.6](https://github.com/User5842/rafaels-list/compare/v2.1.3...v2.1.6) (2022-08-20)
 
