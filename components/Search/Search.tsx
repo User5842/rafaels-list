@@ -6,7 +6,7 @@ import { SearchProps } from "./Search.props";
 const Search: FunctionComponent<SearchProps> = ({ onSearchChange }) => {
   return (
     <div className={styles.search}>
-      <label htmlFor="search">Or Search:</label>
+      <label htmlFor="search">Search:</label>
       <input
         className={styles.search__input}
         id="search"
