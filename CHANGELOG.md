@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [2.1.9](https://github.com/User5842/rafaels-list/compare/v2.1.8...v2.1.9) (2022-08-25)
 
-
 ### Bug Fixes
 
-* add new svg icon; refactor og:* tags ([0b811d9](https://github.com/User5842/rafaels-list/commit/0b811d966b8a7ce7d9fbee0523f8acb5755be5fb))
+- add new svg icon; refactor og:\* tags ([0b811d9](https://github.com/User5842/rafaels-list/commit/0b811d966b8a7ce7d9fbee0523f8acb5755be5fb))
 
 ### [2.1.8](https://github.com/User5842/rafaels-list/compare/v2.1.7...v2.1.8) (2022-08-25)
 
