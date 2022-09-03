@@ -87,7 +87,7 @@ const Home: NextPage<{ data: Data; topics: Array<string> }> = ({
       </Head>
       <main className={styles.main}>
         <Header />
-        <section>
+        <section className={styles.text}>
           <p>
             Here&apos;s a list of questions I came up with while{" "}
             <a
@@ -103,6 +103,27 @@ const Home: NextPage<{ data: Data; topics: Array<string> }> = ({
             rather, to give you a raw look into my thought process. You&apos;ll
             watch me make mistakes, hear me struggle and hopefully develop an
             optimized algorithm by the end.
+          </p>
+          <p>
+            I&apos;ve recently started doing front-end live streams under the
+            name{" "}
+            <a
+              href="https://www.youtube.com/playlist?list=PLWzGjDEgHSJp9yBnacxIr10x8Sx59yJQI"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              With Vanilla 🍦
+            </a>{" "}
+            where I take application ideas and implement them using vanilla JS.
+            If that&apos;s something you&apos;re interested in, click the link
+            or visit the repository on{" "}
+            <a
+              href="https://github.com/User5842/with-vanilla"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              GitHub.
+            </a>{" "}
           </p>
         </section>
         <Progress />
