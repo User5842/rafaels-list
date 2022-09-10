@@ -1,7 +1,16 @@
 .explore {
   display: flex;
   gap: 1rem;
-  overflow: auto;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+.explore::-webkit-scrollbar {
+  width: 5px;
+}
+
+.explore::-webkit-scrollbar-thumb {
+  background-color: #ebbe54;
 }
 
 .explore__card {
@@ -14,12 +23,15 @@
   gap: 1rem;
   padding: 1rem;
   text-decoration: none;
-  transition: transform 0.3s;
-  width: fit-content;
 }
 
 .explore__card:hover {
-  transform: scale(1.1);
+  background-color: #ebbe54;
+  color: #0f172a;
+}
+
+.explore__card:hover svg {
+  color: #0f172a;
 }
 
 .explore__card h1 {
