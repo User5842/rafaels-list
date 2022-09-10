@@ -29,6 +29,7 @@ const Progress = () => {
         </p>
       </div>
       <LinearProgress
+        aria-label="LeetCode Progress"
         role={"progressbar"}
         variant="determinate"
         value={(completed / total) * 100}

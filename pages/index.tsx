@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect } from "react";
 
+import Explore from "../components/Explore/Explore";
 import Filter from "../components/Filter/Filter";
 import Header from "../components/Header/Header";
 import Progress from "../components/Progress/Progress";
@@ -125,6 +126,14 @@ const Home: NextPage<{ data: Data; topics: Array<string> }> = ({
               GitHub.
             </a>{" "}
           </p>
+          <p>
+            If you&apos;re looking for more tailored videos of LeetCode
+            questions based on the Explore cards,{" "}
+            <span className="strong">click</span> on one of the playlists below.
+          </p>
+        </section>
+        <section>
+          <Explore />
         </section>
         <Progress />
         <div className={styles.controls}>

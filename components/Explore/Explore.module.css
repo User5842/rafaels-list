@@ -1,0 +1,32 @@
+.explore {
+  display: flex;
+  gap: 1rem;
+  overflow: auto;
+}
+
+.explore__card {
+  align-items: center;
+  border: 1px solid #ebbe54;
+  border-radius: 0.25rem;
+  color: #ebbe54;
+  cursor: pointer;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+  transition: transform 0.3s;
+  width: fit-content;
+}
+
+.explore__card:hover {
+  transform: scale(1.1);
+}
+
+.explore__card h1 {
+  font-size: 1.1rem;
+}
+
+.explore__card:last-child {
+  cursor: wait;
+  opacity: 0.5;
+}
