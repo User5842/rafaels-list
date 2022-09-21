@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+.question_details + .question_details {
+  margin-top: 2rem;
+}
+
 .questions_difficulty {
   cursor: pointer;
   font-size: 1.2rem;

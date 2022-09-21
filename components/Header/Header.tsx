@@ -1,6 +1,7 @@
 import {
   faDiscord,
   faGithubAlt,
+  faSpotify,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { faShirt } from "@fortawesome/free-solid-svg-icons";
@@ -45,6 +46,18 @@ const Header = () => (
         <FontAwesomeIcon
           color="white"
           icon={faDiscord}
+          style={{ fontSize: "1.5rem" }}
+        />
+      </a>
+      <a
+        href="https://open.spotify.com/show/01o0SmeDTnKQaeN6uZ9L8R"
+        rel="noopener noreferrer"
+        target="_blank"
+        title="Spotify - castware"
+      >
+        <FontAwesomeIcon
+          color="white"
+          icon={faSpotify}
           style={{ fontSize: "1.5rem" }}
         />
       </a>

@@ -1,4 +1,4 @@
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styles from "./Explore.module.css";
@@ -19,6 +19,20 @@ const Explore = () => {
           style={{ fontSize: "2rem" }}
         />
         <h1>LeetCode Beginner&apos;s Guide</h1>
+      </a>
+      <a
+        className={styles.explore__card}
+        href="https://www.youtube.com/playlist?list=PLWzGjDEgHSJqwJXWb_C2KpTAcYFntLlXn"
+        rel="noopener noreferrer"
+        target="_blank"
+        title="Arrays 101"
+      >
+        <FontAwesomeIcon
+          color="white"
+          icon={faCode}
+          style={{ fontSize: "2rem" }}
+        />
+        <h1>Arrays 101</h1>
       </a>
       <div className={styles.explore__card}>
         <h1>Coming soon...</h1>
