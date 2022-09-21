@@ -18,4 +18,9 @@ export interface Data {
    * List of Hard questions.
    */
   hard: Array<Question>;
+
+  /**
+   * Index signature used to add questions during page load.
+   */
+  [key: string]: Array<Question>;
 }

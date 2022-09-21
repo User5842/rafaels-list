@@ -149,11 +149,17 @@ const Home: NextPage<{ data: Data; topics: Array<string> }> = ({
 export async function getServerSideProps() {
   const questions = await prisma.question.findMany();
 
-  const data: Data = {
-    easy: questions,
-    medium: [],
-    hard: [],
-  };
+  const data: Data = questions.reduce(
+    (innerData, question) => {
+      innerData[question.difficulty].push(question);
+      return innerData;
+    },
+    {
+      easy: [],
+      medium: [],
+      hard: [],
+    } as Data
+  );
 
   const allTopics = questions.flatMap((question) => question.topics);
   const uniqueTopics = [...new Set(allTopics)];
