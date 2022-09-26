@@ -66,25 +66,28 @@ const Home: NextPage<{ data: Data; topics: Array<string> }> = ({
           name="description"
           content="High-quality LeetCode questions with live-video links."
         />
-        <meta property="og:url" content="https://www.rafaelslist.com/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Rafael's List" />
         <meta
           property="og:description"
           content="High-quality LeetCode questions with live-video links."
         />
-        <meta property="og:image" content="https://rafaelslist.com/cube.svg" />
+        <meta property="og:image" content="🏖️" />
+        <meta property="og:title" content="Rafael's List" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.rafaelslist.com/" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="rafaelslist.com" />
-        <meta property="twitter:url" content="https://www.rafaelslist.com/" />
-        <meta name="twitter:title" content="Rafael's List" />
         <meta
           name="twitter:description"
           content="High-quality LeetCode questions with live-video links."
         />
-        <meta name="twitter:image" content="https://rafaelslist.com/cube.svg" />
-        <link rel="icon" href="/cube.svg" />
+        <meta property="twitter:domain" content="rafaelslist.com" />
+        <meta name="twitter:image" content="🏖️" />
+        <meta name="twitter:title" content="Rafael's List" />
+        <meta property="twitter:url" content="https://www.rafaelslist.com/" />
+        <link
+          rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏖️</text></svg>"
+        />
       </Head>
       <main className={styles.main}>
         <Header />
