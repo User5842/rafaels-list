@@ -24,7 +24,7 @@
     "@fortawesome/free-brands-svg-icons": "6.2.0",
     "@fortawesome/free-solid-svg-icons": "6.2.0",
     "@fortawesome/react-fontawesome": "0.2.0",
-    "@mui/material": "5.10.1",
+    "@mui/material": "5.10.16",
     "@prisma/client": "4.2.1",
     "local-storage": "2.0.0",
     "next": "12.3.1",
